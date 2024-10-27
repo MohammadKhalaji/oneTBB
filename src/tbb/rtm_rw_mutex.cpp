@@ -29,8 +29,8 @@ namespace r1 {
 struct rtm_rw_mutex_impl {
     // maximum number of times to retry
     // TODO: experiment on retry values.
-    static constexpr int retry_threshold_read = 10;
-    static constexpr int retry_threshold_write = 10;
+    static constexpr int retry_threshold_read = 256;
+    static constexpr int retry_threshold_write = 256;
     using transaction_result_type = decltype(begin_transaction());
 
     //! Release speculative mutex
